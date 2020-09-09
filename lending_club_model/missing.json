@@ -1,0 +1,17 @@
+{
+    "max": {
+        "bc_open_to_buy": 605996.0,
+        "mths_since_recent_inq": 25.0
+    },
+    "min": {
+        "addr_state": "AK",
+        "bc_util": 0.0,
+        "delinq_2yrs": 0.0,
+        "loan_amnt": 1000.0,
+        "loan_status": "Charged Off",
+        "num_op_rev_tl": 0.0,
+        "revol_util": 0.0,
+        "sec_app_earliest_cr_line": "1954-12-01 00:00:00",
+        "term": " 36 months"
+    }
+}

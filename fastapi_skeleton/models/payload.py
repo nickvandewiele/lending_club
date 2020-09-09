@@ -3,24 +3,30 @@ from typing import List
 from pydantic import BaseModel
 
 
-class HousePredictionPayload(BaseModel):
-    median_income_in_block: float
-    median_house_age_in_block: int
-    average_rooms: int
-    average_bedrooms: int
-    population_per_block: int
-    average_house_occupancy: int
-    block_latitude: float
-    block_longitude: float
+class LoanPredictionPayload(BaseModel):
+
+    loan_amnt: float
+    mths_since_recent_inq: float
+    revol_util: float
+    bc_open_to_buy: float
+    bc_util: float
+    num_op_rev_tl: float
+    term: str
+    delinq_2yrs: float
+    sec_app_earliest_cr_line: str
+    addr_state: str
 
 
-def payload_to_list(hpp: HousePredictionPayload) -> List:
+def payload_to_list(lpp: LoanPredictionPayload) -> List:
     return [
-        hpp.median_income_in_block,
-        hpp.median_house_age_in_block,
-        hpp.average_rooms,
-        hpp.average_bedrooms,
-        hpp.population_per_block,
-        hpp.average_house_occupancy,
-        hpp.block_latitude,
-        hpp.block_longitude]
+        lpp.loan_amnt,
+        lpp.mths_since_recent_inq,
+        lpp.revol_util,
+        lpp.bc_open_to_buy,
+        lpp.bc_util,
+        lpp.num_op_rev_tl,
+        lpp.term,
+        lpp.delinq_2yrs,
+        lpp.sec_app_earliest_cr_line,
+        lpp.addr_state,]
+   

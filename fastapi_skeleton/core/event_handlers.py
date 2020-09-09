@@ -5,13 +5,14 @@ from typing import Callable
 from fastapi import FastAPI
 from loguru import logger
 
-from fastapi_skeleton.core.config import DEFAULT_MODEL_PATH
-from fastapi_skeleton.services.models import HousePriceModel
+from fastapi_skeleton.core.config import DEFAULT_MODEL_PATH, DEFAULT_MINMAX_PATH
+from fastapi_skeleton.services.models import LoanModel
 
 
 def _startup_model(app: FastAPI) -> None:
     model_path = DEFAULT_MODEL_PATH
-    model_instance = HousePriceModel(model_path)
+    minmax_path = DEFAULT_MINMAX_PATH
+    model_instance = LoanModel(model_path, minmax_path)
     app.state.model = model_instance
 
 
