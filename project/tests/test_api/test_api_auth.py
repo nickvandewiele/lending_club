@@ -1,6 +1,6 @@
 
 
-from lending_club.core import messages
+from app.core import messages
 
 
 def test_auth_using_prediction_api_no_apikey_header(test_client) -> None:

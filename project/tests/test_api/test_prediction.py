@@ -1,6 +1,6 @@
 
 
-from lending_club.core import config
+from app.core import config
 
 
 def test_prediction(test_client) -> None:

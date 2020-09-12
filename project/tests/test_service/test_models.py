@@ -1,10 +1,10 @@
 
 import pytest
 
-from lending_club.core import config
-from lending_club.models.payload import LoanPredictionPayload
-from lending_club.models.prediction import LoanPredictionResult
-from lending_club.services.models import LoanModel
+from app.core import config
+from app.models.payload import LoanPredictionPayload
+from app.models.prediction import LoanPredictionResult
+from app.services.models import LoanModel
 
 
 def test_prediction(test_client) -> None:

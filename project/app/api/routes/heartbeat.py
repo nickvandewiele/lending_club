@@ -1,7 +1,7 @@
 
 from fastapi import APIRouter
 
-from lending_club.models.heartbeat import HearbeatResult
+from app.models.heartbeat import HearbeatResult
 
 router = APIRouter()
 

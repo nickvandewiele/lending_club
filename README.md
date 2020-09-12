@@ -28,7 +28,7 @@ print(str(uuid.uuid4()))
 
 1. Start your  app with: 
 ```bash
-uvicorn lending_club.main:app
+uvicorn app.main:app
 ```
 
 2. Go to [http://localhost:8000/docs](http://localhost:8000/docs).

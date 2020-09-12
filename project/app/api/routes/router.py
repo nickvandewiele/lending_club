@@ -2,7 +2,7 @@
 
 from fastapi import APIRouter
 
-from lending_club.api.routes import heartbeat, prediction
+from app.api.routes import heartbeat, prediction
 
 api_router = APIRouter()
 api_router.include_router(heartbeat.router, tags=["health"], prefix="/health")
