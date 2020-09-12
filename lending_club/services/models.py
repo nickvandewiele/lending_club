@@ -9,10 +9,10 @@ import pandas as pd
 from loguru import logger
 from catboost import Pool
 
-from fastapi_skeleton.core.messages import NO_VALID_PAYLOAD
-from fastapi_skeleton.models.payload import (LoanPredictionPayload,
+from lending_club.core.messages import NO_VALID_PAYLOAD
+from lending_club.models.payload import (LoanPredictionPayload,
                                              payload_to_list)
-from fastapi_skeleton.models.prediction import LoanPredictionResult
+from lending_club.models.prediction import LoanPredictionResult
 
 
 class LoanModel(object):

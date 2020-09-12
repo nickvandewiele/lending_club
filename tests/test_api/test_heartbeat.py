@@ -1,6 +1,6 @@
 
 
-from fastapi_skeleton.main import get_app
+from lending_club.main import get_app
 
 app = get_app()
 

@@ -5,8 +5,8 @@ from typing import Callable
 from fastapi import FastAPI
 from loguru import logger
 
-from fastapi_skeleton.core.config import DEFAULT_MODEL_PATH, DEFAULT_MINMAX_PATH
-from fastapi_skeleton.services.models import LoanModel
+from lending_club.core.config import DEFAULT_MODEL_PATH, DEFAULT_MINMAX_PATH
+from lending_club.services.models import LoanModel
 
 
 def _startup_model(app: FastAPI) -> None:

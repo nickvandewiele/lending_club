@@ -1,10 +1,10 @@
 from fastapi import APIRouter, Depends
 from starlette.requests import Request
 
-from fastapi_skeleton.core import security
-from fastapi_skeleton.models.payload import LoanPredictionPayload
-from fastapi_skeleton.models.prediction import LoanPredictionResult
-from fastapi_skeleton.services.models import LoanModel
+from lending_club.core import security
+from lending_club.models.payload import LoanPredictionPayload
+from lending_club.models.prediction import LoanPredictionResult
+from lending_club.services.models import LoanModel
 
 router = APIRouter()
 

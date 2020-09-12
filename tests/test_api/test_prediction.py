@@ -1,6 +1,6 @@
 
 
-from fastapi_skeleton.core import config
+from lending_club.core import config
 
 
 def test_prediction(test_client) -> None:

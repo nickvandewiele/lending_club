@@ -1,10 +1,10 @@
 
 import pytest
 
-from fastapi_skeleton.core import config
-from fastapi_skeleton.models.payload import LoanPredictionPayload
-from fastapi_skeleton.models.prediction import LoanPredictionResult
-from fastapi_skeleton.services.models import LoanModel
+from lending_club.core import config
+from lending_club.models.payload import LoanPredictionPayload
+from lending_club.models.prediction import LoanPredictionResult
+from lending_club.services.models import LoanModel
 
 
 def test_prediction(test_client) -> None:
