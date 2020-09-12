@@ -28,5 +28,4 @@ def payload_to_list(lpp: LoanPredictionPayload) -> List:
         lpp.term,
         lpp.delinq_2yrs,
         lpp.sec_app_earliest_cr_line,
-        lpp.addr_state,]
-   
+        lpp.addr_state, ]

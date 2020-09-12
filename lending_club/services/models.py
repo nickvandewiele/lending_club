@@ -11,13 +11,23 @@ from catboost import Pool
 
 from lending_club.core.messages import NO_VALID_PAYLOAD
 from lending_club.models.payload import (LoanPredictionPayload,
-                                             payload_to_list)
+                                         payload_to_list)
 from lending_club.models.prediction import LoanPredictionResult
 
 
 class LoanModel(object):
 
-    feature_names = ["loan_amnt","mths_since_recent_inq","revol_util","bc_open_to_buy","bc_util","num_op_rev_tl","term","delinq_2yrs","sec_app_earliest_cr_line","addr_state"]
+    feature_names = [
+        "loan_amnt",
+        "mths_since_recent_inq",
+        "revol_util",
+        "bc_open_to_buy",
+        "bc_util",
+        "num_op_rev_tl",
+        "term",
+        "delinq_2yrs",
+        "sec_app_earliest_cr_line",
+        "addr_state"]
 
     def __init__(self, path, minmax_path):
         self.path = path
@@ -32,7 +42,7 @@ class LoanModel(object):
 
     def _load_local_minmax(self):
         with open(self.minmax_path, 'r') as fp:
-            self.minmax = json.load(fp)        
+            self.minmax = json.load(fp)
 
     def _pre_process(self, payload: LoanPredictionPayload) -> List:
         logger.debug("Pre-processing payload.")
@@ -47,20 +57,24 @@ class LoanModel(object):
 
     def _predict(self, features: List) -> np.ndarray:
         logger.debug("Predicting.")
-        
-        X = pd.DataFrame(data=features, columns=self.feature_names)
-        X['mths_since_recent_inq'] = X['mths_since_recent_inq'].astype(float)
-        X['sec_app_earliest_cr_line'] = pd.to_datetime(X['sec_app_earliest_cr_line'])
+
+        features_x = pd.DataFrame(data=features, columns=self.feature_names)
+        features_x['mths_since_recent_inq'] = features_x['mths_since_recent_inq'].astype(
+            float)
+        features_x['sec_app_earliest_cr_line'] = pd.to_datetime(
+            features_x['sec_app_earliest_cr_line'])
 
         logger.info('Filling missing values...')
         fill_max_values = self.minmax['max']
         fill_min_values = self.minmax['min']
-        fill_min_values['sec_app_earliest_cr_line'] = pd.to_datetime(fill_min_values['sec_app_earliest_cr_line'])        
-        X = X.fillna({**fill_max_values, **fill_min_values})
+        fill_min_values['sec_app_earliest_cr_line'] = pd.to_datetime(
+            fill_min_values['sec_app_earliest_cr_line'])
+        features_x = features_x.fillna({**fill_max_values, **fill_min_values})
 
         logger.info('Predicting...')
-        cat_feat_ind = (X.dtypes == 'object').to_numpy().nonzero()[0]
-        y_proba = self.model.predict_proba(Pool(X, cat_features=cat_feat_ind))[:, 1]
+        cat_feat_ind = (features_x.dtypes == 'object').to_numpy().nonzero()[0]
+        y_proba = self.model.predict_proba(
+            Pool(features_x, cat_features=cat_feat_ind))[:, 1]
         prediction_result = (y_proba > self.threshold).astype(int)
 
         return prediction_result

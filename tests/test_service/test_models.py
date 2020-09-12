@@ -31,7 +31,6 @@ def test_prediction(test_client) -> None:
 def test_prediction_no_payload(test_client) -> None:
     model_path = config.DEFAULT_MODEL_PATH
     minmax_path = config.DEFAULT_MINMAX_PATH
-    
     lpm = LoanModel(model_path, minmax_path)
     with pytest.raises(ValueError):
         result = lpm.predict(None)
