@@ -7,3 +7,4 @@ joblib==0.14.1
 loguru==0.4.1
 pandas==1.1.1
 catboost==0.24.1
+gunicorn==20.0.4
