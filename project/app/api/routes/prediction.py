@@ -13,7 +13,7 @@ router = APIRouter()
 def post_predict(
     request: Request,
     authenticated: bool = Depends(security.validate_request),
-    block_data: LoanPredictionPayload = None
+    block_data: LoanPredictionPayload = None,
 ) -> LoanPredictionResult:
 
     model: LoanModel = request.app.state.model

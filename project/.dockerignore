@@ -4,3 +4,4 @@ Dockerfile
 Dockerfile.prod
 .coverage
 htmlcov-py38/
+.tox

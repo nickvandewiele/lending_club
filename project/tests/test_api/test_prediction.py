@@ -1,5 +1,3 @@
-
-
 from app.core import config
 
 
@@ -18,7 +16,7 @@ def test_prediction(test_client) -> None:
             "sec_app_earliest_cr_line": "NaT",
             "addr_state": "CO",
         },
-        headers={"token": str(config.API_KEY)}
+        headers={"token": str(config.API_KEY)},
     )
     assert response.status_code == 200
     assert "result" in response.json()
@@ -26,8 +24,6 @@ def test_prediction(test_client) -> None:
 
 def test_prediction_nopayload(test_client) -> None:
     response = test_client.post(
-        "/api/model/predict",
-        json={},
-        headers={"token": str(config.API_KEY)}
+        "/api/model/predict", json={}, headers={"token": str(config.API_KEY)}
     )
     assert response.status_code == 422

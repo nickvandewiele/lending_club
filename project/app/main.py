@@ -1,12 +1,8 @@
-
-
 from fastapi import FastAPI
 
 from app.api.routes.router import api_router
-from app.core.config import (API_PREFIX, APP_NAME, APP_VERSION,
-                             IS_DEBUG)
-from app.core.event_handlers import (start_app_handler,
-                                     stop_app_handler)
+from app.core.config import API_PREFIX, APP_NAME, APP_VERSION, IS_DEBUG
+from app.core.event_handlers import start_app_handler, stop_app_handler
 
 
 def get_app() -> FastAPI:
