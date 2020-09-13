@@ -27,12 +27,12 @@ jobs:
             --target builder \
             --cache-from ${{ env.IMAGE }}-builder:latest \
             --tag ${{ env.IMAGE }}-builder:latest \
-            --file ./project/Dockerfile \
+            --file ./project/Dockerfile.prod \
             "./project"
           docker build \
             --cache-from ${{ env.IMAGE }}-final:latest \
             --tag ${{ env.IMAGE }}-final:latest \
-            --file ./project/Dockerfile \
+            --file ./project/Dockerfile.prod \
             "./project"
       - name: Push images
         run: |
@@ -60,12 +60,12 @@ jobs:
             --target builder \
             --cache-from ${{ env.IMAGE }}-builder:latest \
             --tag ${{ env.IMAGE }}-builder:latest \
-            --file ./project/Dockerfile \
+            --file ./project/Dockerfile.prod \
             "./project"
           docker build \
             --cache-from ${{ env.IMAGE }}-final:latest \
             --tag ${{ env.IMAGE }}-final:latest \
-            --file ./project/Dockerfile \
+            --file ./project/Dockerfile.prod \
             "./project"
       - name: Run container
         run: |
