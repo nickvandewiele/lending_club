@@ -2,7 +2,6 @@
 
 ![Continuous Integration and Delivery](https://github.com/nickvandewiele/lending_club/workflows/Continuous%20Integration%20and%20Delivery/badge.svg?branch=master)
 
-Serving machine learning models production-ready, fast, easy and secure powered by the great FastAPI by [Sebastián Ramírez]([)](https://github.com/tiangolo).
 
 ## Requirements
 
@@ -39,7 +38,6 @@ uvicorn app.main:app
 ![Authroization](./docs/authorize.png)
    
 4. You can use the sample payload from the `docs/loan_payload.json` file when trying out the model using the API.
-   ![Prediction with example payload](./docs/loan_payload.png)
 
 ## Run Tests
 
