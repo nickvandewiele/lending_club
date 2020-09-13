@@ -2,6 +2,10 @@
 
 ![Continuous Integration and Delivery](https://github.com/nickvandewiele/lending_club/workflows/Continuous%20Integration%20and%20Delivery/badge.svg?branch=master)
 
+A loan prediction tool based on a machine learning model using lending club data inspired by a [Kaggle notebook](https://www.kaggle.com/pavlofesenko/minimizing-risks-for-loan-investments/notebook)
+
+Skeleton using fast-api and docker inspired by [Testdriven.io course](https://testdriven.io/courses/tdd-fastapi/) and [this fastapi/ml template](https://github.com/eightBEC/fastapi-ml-skeleton).
+
 
 ## Requirements
 
