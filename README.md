@@ -1,4 +1,6 @@
-# FastAPI Model Server Skeleton
+# Lending Club
+
+![Continuous Integration and Delivery](https://github.com/nickvandewiele/lending_club/workflows/Continuous%20Integration%20and%20Delivery/badge.svg?branch=master)
 
 Serving machine learning models production-ready, fast, easy and secure powered by the great FastAPI by [Sebastián Ramírez]([)](https://github.com/tiangolo).
 
