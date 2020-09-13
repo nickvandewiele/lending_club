@@ -75,13 +75,4 @@ jobs:
             -e PORT=8765 \
             -p 5003:8765 \
             ${{ env.IMAGE }}-final:latest
-      - name: Install requirements
-        run: docker exec lending pip install black flake8 isort pytest
-      - name: Pytest
-        run: docker exec lending python -m pytest .
-      - name: Flake8
-        run: docker exec lending python -m flake8 .
-      - name: Black
-        run: docker exec lending python -m black . --check
-      - name: isort
-        run: docker exec lending /bin/sh -c "python -m isort ./*/*.py --check-only"
+            
