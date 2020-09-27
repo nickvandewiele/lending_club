@@ -9,6 +9,9 @@ catboost==0.24.1
 jupyter
 xlrd # for pd.read_excel
 joblib==0.14.1
+nltk==3.5
+num2words
+
 
 # external requirements
 click

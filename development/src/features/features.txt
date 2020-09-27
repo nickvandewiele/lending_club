@@ -10,5 +10,6 @@ FEATURES = {
     "delinq_2yrs": "The number of 30+ days past-due incidences of delinquency in the borrower's credit file for the past 2 years",
     "sec_app_earliest_cr_line": "Earliest credit line at time of application for the secondary applicant",
     "addr_state": "The state provided by the borrower in the loan application",
+    "emp_title": "Employment title",
     "loan_status": "target",
 }
